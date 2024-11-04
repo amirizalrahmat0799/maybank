@@ -1,4 +1,4 @@
-package com.mbb.maybank_spring_app;
+package my.com.mbb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

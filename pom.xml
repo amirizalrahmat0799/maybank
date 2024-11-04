@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>maybank-spring-app</name>
-	<description>Maybank assesment test project</description>
+	<description>Maybank assessment test project</description>
 	<url/>
 	<licenses>
 		<license/>
