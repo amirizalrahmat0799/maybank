@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Define a RollingFileAppender for file-based logging -->
+    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>C:/mbb/app.log</file>
+
+        <!-- Encoder for formatting log output -->
+        <encoder
+                class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d %p %C [%t] %m%n</Pattern>
+        </encoder>
+
+        <!-- Rolling policy: archive logs by day and size -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>C:/mbb/app-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxHistory>7</maxHistory> <!-- Retain logs for 7 days -->
+            <maxFileSize>10MB</maxFileSize> <!-- Log file size before rolling over -->
+        </rollingPolicy>
+    </appender>
+
+    <!-- Define a ConsoleAppender for logging to the console -->
+    <appender name="CONSOLE"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %white(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%C): %msg%n%throwable
+            </Pattern>
+        </layout>
+    </appender>
+
+    <!-- Root logger configuration -->
+    <root level="INFO">
+        <appender-ref ref="ROLLING" />
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+    <!-- Specific logger for Spring Web (optional) -->
+    <logger name="org.springframework.web" level="DEBUG" />
+
+    <!-- Specific logger for your application package (optional) -->
+    <logger name="my.com.mbb" level="DEBUG" />
+
+</configuration>
