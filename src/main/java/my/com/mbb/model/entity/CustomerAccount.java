@@ -1,6 +1,9 @@
 package my.com.mbb.model.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -17,8 +20,6 @@ import java.util.UUID;
 @Table(name = "cust_acct", schema = "dbo")
 public class CustomerAccount extends CommonEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", columnDefinition = "UNIQUEIDENTIFIER")
     private UUID id;
 
     @Column(name = "cust_id")
