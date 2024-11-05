@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 public class CommonEntity implements Serializable {
     @Column(name = "created_by")
     private String createdBy;
-    @Column(name = "create_date")
+    @Column(name = "created_date")
     private Timestamp createdDate;
     @Column(name = "updated_by")
     private String updatedBy;

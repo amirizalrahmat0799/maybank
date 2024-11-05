@@ -17,8 +17,8 @@ import java.util.UUID;
 @Table(name = "cust_acct", schema = "dbo")
 public class CustomerAccount extends CommonEntity {
     @Id
-    @GeneratedValue
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", columnDefinition = "UNIQUEIDENTIFIER")
     private UUID id;
 
     @Column(name = "cust_id")
