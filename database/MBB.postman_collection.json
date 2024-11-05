@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "0f058b05-98a0-43b0-9953-4f794a46cbbe",
+		"name": "MBB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24153908"
+	},
+	"item": [
+		{
+			"name": "Rate enquiry (third party)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currencies\":\"myr\",\r\n    \"base\":\"sgd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/mbb/api/v1/currency/rate-enquiry"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer Account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mbb/api/v1/cust-acct?page=0&rowPerPage=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mbb",
+						"api",
+						"v1",
+						"cust-acct"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "rowPerPage",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/mbb/api/v1/cust-acct"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 05 Nov 2024 08:49:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"createdBy\": \"SYSTEM\",\n    \"createdDate\": \"2024-11-04T20:47:39.000+00:00\",\n    \"updatedBy\": null,\n    \"updatedDate\": null,\n    \"id\": \"621554aa-4fd8-4f4c-aebb-c76d71bc00b3\",\n    \"customerId\": \"myc0048n\",\n    \"accountType\": \"DCA\",\n    \"accountNo\": \"166010508011\",\n    \"currencyCode\": \"MYR\",\n    \"cardNo\": \"5081786436578901\",\n    \"isSalaryAccount\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Insert Customer Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": \"myk8912g\",\r\n    \"accountType\": \"DCA\",\r\n    \"accountNo\": \"4446015587851\",\r\n    \"currencyCode\": \"MYR\",\r\n    \"cardNo\": \"6171313456565301\",\r\n    \"isSalaryAccount\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/mbb/api/v1/cust-acct"
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/mbb/api/v1/cust-acct"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 05 Nov 2024 08:49:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"createdBy\": \"SYSTEM\",\n    \"createdDate\": \"2024-11-04T20:47:39.000+00:00\",\n    \"updatedBy\": null,\n    \"updatedDate\": null,\n    \"id\": \"621554aa-4fd8-4f4c-aebb-c76d71bc00b3\",\n    \"customerId\": \"myc0048n\",\n    \"accountType\": \"DCA\",\n    \"accountNo\": \"166010508011\",\n    \"currencyCode\": \"MYR\",\n    \"cardNo\": \"5081786436578901\",\n    \"isSalaryAccount\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Customer Account",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": null,\r\n    \"accountType\": null,\r\n    \"accountNo\": null,\r\n    \"currencyCode\": null,\r\n    \"cardNo\": null,\r\n    \"isSalaryAccount\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mbb/api/v1/cust-acct?id=a36173a2-51ed-47c0-a5dc-97a279e33a18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mbb",
+						"api",
+						"v1",
+						"cust-acct"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "a36173a2-51ed-47c0-a5dc-97a279e33a18"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/mbb/api/v1/cust-acct"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 05 Nov 2024 08:49:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"createdBy\": \"SYSTEM\",\n    \"createdDate\": \"2024-11-04T20:47:39.000+00:00\",\n    \"updatedBy\": null,\n    \"updatedDate\": null,\n    \"id\": \"621554aa-4fd8-4f4c-aebb-c76d71bc00b3\",\n    \"customerId\": \"myc0048n\",\n    \"accountType\": \"DCA\",\n    \"accountNo\": \"166010508011\",\n    \"currencyCode\": \"MYR\",\n    \"cardNo\": \"5081786436578901\",\n    \"isSalaryAccount\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Customer Account",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mbb/api/v1/cust-acct?id=a36173a2-51ed-47c0-a5dc-97a279e33a18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mbb",
+						"api",
+						"v1",
+						"cust-acct"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "a36173a2-51ed-47c0-a5dc-97a279e33a18"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/mbb/api/v1/cust-acct"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 05 Nov 2024 08:49:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"createdBy\": \"SYSTEM\",\n    \"createdDate\": \"2024-11-04T20:47:39.000+00:00\",\n    \"updatedBy\": null,\n    \"updatedDate\": null,\n    \"id\": \"621554aa-4fd8-4f4c-aebb-c76d71bc00b3\",\n    \"customerId\": \"myc0048n\",\n    \"accountType\": \"DCA\",\n    \"accountNo\": \"166010508011\",\n    \"currencyCode\": \"MYR\",\n    \"cardNo\": \"5081786436578901\",\n    \"isSalaryAccount\": true\n}"
+				}
+			]
+		}
+	]
+}
