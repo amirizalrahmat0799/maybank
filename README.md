@@ -1,5 +1,5 @@
 # Maybank
-This is maybank assesment project
+This is Maybank assesment project.
 
 ## Initial setup
 
